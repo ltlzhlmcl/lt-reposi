@@ -5,7 +5,6 @@ package dao;
 
 import java.util.List;
 import java.util.Map;
-import static util.common.HrmConstants.USERTABLE;
 import domain.User;
 
 

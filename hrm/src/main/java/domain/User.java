@@ -12,12 +12,67 @@ public class User implements Serializable{
 	private String loginname;
 	private String password;
 	private Integer status;
-	private Date createDate;
+	private Date createdate;
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((createdate == null) ? 0 : createdate.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((loginname == null) ? 0 : loginname.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (createdate == null) {
+			if (other.createdate != null)
+				return false;
+		} else if (!createdate.equals(other.createdate))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (loginname == null) {
+			if (other.loginname != null)
+				return false;
+		} else if (!loginname.equals(other.loginname))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", loginname=" + loginname + ", password=" + password
-				+ ", status=" + status + ", createDate=" + createDate + "]";
+				+ ", status=" + status + ", createDate=" + createdate + "]";
 	}
 
 	public Integer getId() {
@@ -60,12 +115,12 @@ public class User implements Serializable{
 		this.status = status;
 	}
 
-	public Date getCreateDate() {
-		return createDate;
+	public Date getCreatedate() {
+		return createdate;
 	}
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
+	public void setCreatedate(Date createdate) {
+		this.createdate = createdate;
 	}
 
 	public User() {

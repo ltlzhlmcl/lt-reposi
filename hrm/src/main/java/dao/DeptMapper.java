@@ -23,7 +23,7 @@ public interface DeptMapper {
 	 * @param: @return            
 	 */
 	@Select("select * from dept")
-	public List<Dept> showAllDept();
+	public List<Dept> selectAllDept();
 	/**
 	 * @Description: delete dept by id 
 	 * @param:             
@@ -32,7 +32,7 @@ public interface DeptMapper {
 	public void deleteById(Integer a);
 	
 	/**
-	 * @Description: save dept 
+	 * @Description: insert into dept 
 	 * @param: @param dept            
 	 */
 	public void save(Dept dept);

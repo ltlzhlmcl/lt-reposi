@@ -8,8 +8,9 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import dao.DeptMapper;
-import domain.Dept;
+import dao.DocumentMapper;
+import domain.Document;
+import domain.User;
 
 /**
  * @ClassName:  UserDaoText   
@@ -31,14 +32,17 @@ public class UserDaoText {
 
 	@Test
 	public void test() {
-		Dept dept= new Dept();
-		dept.setName("测试");
-		dept.setRemark("just test2");
-		dept.setId(8);
-		DeptMapper mapper=(DeptMapper)applicationContext.getBean("deptMapper");
-		mapper.deleteById(8);
+		Document doc=new Document();
+		doc.setRemark("test reamark");
+		doc.setId(2);
+		doc.setTitle("test tiltle");
+		doc.setFilename("test filename");
+		User user= new User();
+		user.setId(1);
+		doc.setUser(user);
 		
-		
+		DocumentMapper mapper=(DocumentMapper)applicationContext.getBean("documentMapper");
+		mapper.save(doc);
 		
 	}
 
